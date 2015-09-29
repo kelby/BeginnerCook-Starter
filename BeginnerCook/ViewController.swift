@@ -48,7 +48,12 @@ class ViewController: UIViewController {
         presentViewController(herbDetails, animated: true, completion: nil)
     }
     
+
     func animationControllerForPresentedController(
+        transition.originFrame = selectedImage!.superview!.convertRect(selectedImage!.frame, toView: nil)
+        
+        transition.presenting = true
+
         presented: UIViewController,
         presentingController presenting: UIViewController,
         sourceController source: UIViewController) ->
@@ -58,7 +63,8 @@ class ViewController: UIViewController {
     }
     
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        transition.presenting = false
+        return transition
     }
 }
 
