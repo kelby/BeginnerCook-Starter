@@ -50,16 +50,13 @@ class ViewController: UIViewController {
     
 
     func animationControllerForPresentedController(
-        transition.originFrame = selectedImage!.superview!.convertRect(selectedImage!.frame, toView: nil)
-        
-        transition.presenting = true
-
         presented: UIViewController,
         presentingController presenting: UIViewController,
         sourceController source: UIViewController) ->
         UIViewControllerAnimatedTransitioning? {
-            
-        return transition
+            transition.originFrame = selectedImage!.superview!.convertRect(selectedImage!.frame, toView: nil)
+            transition.presenting = true
+            return transition
     }
     
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
