@@ -9,8 +9,12 @@
 import UIKit
 
 class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+    let duration    = 1.0
+    var presenting  = true
+    var originFrame = CGRect.zero
+
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?)-> NSTimeInterval {
-        return 0
+        return duration
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
